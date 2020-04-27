@@ -11,7 +11,7 @@
   "visibility":
   {
     "public": false,
-    "lan": true
+    "lan": false
   },
 
   "_comment_credentials": "Your factorio.com login credentials. Required for games with visibility public",

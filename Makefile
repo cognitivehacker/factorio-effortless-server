@@ -1,12 +1,22 @@
+.DEFAULT_GOAL := prepare
+
+.PHONY: prepare
+prepare: clean
+	@./scripts/prepare.sh
+
+.PHONY: clean
+clean:
+	@./scripts/clean.sh
+
 .PHONY: run
 run:
-	@./third-party/factorio/bin/x64/factorio --start-server maps/dafiti-world --server-settings configs/server-settings.json 
+	@./tmp/usr/local/lib/factorio/bin/x64/factorio --start-server maps/world --server-settings configs/server-settings.json 
 
 .PHONY: create
 create:
-	@./third-party/factorio/bin/x64/factorio --create maps/world-000
+	@/usr/local/bin/factorio --create /home/factorio/maps/world
 
-	
 .PHONY: help
 help:
 	@./third-party/factorio/bin/x64/factorio --start-server 
+

@@ -1,0 +1,10 @@
+[Unit]
+Description=Factorio Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/factorio --start-server /home/factorio/maps/world.zip --server-settings /home/factorio/configs/server-settings.json
+
+[Install]
+WantedBy=default.target

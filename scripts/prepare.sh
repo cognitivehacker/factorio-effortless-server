@@ -38,8 +38,8 @@ download_mods(){
 }
 
 configs(){
-    mkdir -p $TMP/factorio/$CONF
-    cp -r ./configs/* $TMP/home/factorio/$CONF
+    mkdir -p $TMP/home/$FACTORIO_SERVICE_USER/$CONF
+    cp -r ./configs/* $TMP/home/$FACTORIO_SERVICE_USER/$CONF
 }
 
 download_server

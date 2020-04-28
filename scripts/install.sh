@@ -26,6 +26,10 @@ ln -s $LOCAL_LIB/factorio/bin/x64/factorio $LOCAL_BIN/factorio
 
 id -u $FACTORIO_SERVICE_USER &>/dev/null || useradd $FACTORIO_SERVICE_USER 
 
+if [[ ! -d "/home/factorio" ]]; then
+    mkdir "/home/factorio"
+fi
+
 # Setup Conf
 
 cp -R $TMP/home/factorio/$CONF /home/factorio/$CONF

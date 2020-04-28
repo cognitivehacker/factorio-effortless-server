@@ -30,7 +30,7 @@ download_mods(){
     while IFS= read -r line
     do
     echo ""
-        wget --content-disposition "$line?username=$FACTORIO_USERNAME&token=$TOKEN_FACTORIO" -P $TMP$LOCAL_LIB/factorio/mods
+        wget --content-disposition "$line?username=$FACTORIO_USERNAME&token=$FACTORIO_ACCESS_TOKEN" -P $TMP$LOCAL_LIB/factorio/mods
     done < "configs/mods.txt"
 
     for i in `ls $TMP$LOCAL_LIB/factorio/mods/*.zip?*`; do echo $i | cut -f 1 -d \? | xargs -n1 mv $i ; done

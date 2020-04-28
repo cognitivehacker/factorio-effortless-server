@@ -4,7 +4,7 @@ set -x
 
 source ./scripts/source.sh
 
-if [[ ! -d ./tmp ]]; then
+if [[ ! -d "$TMP" ]]; then
     echo "error: tmp not found"
     echo "try to run make && make install"
     exit 1
@@ -32,10 +32,17 @@ if [[ ! -d "/home/factorio" ]]; then
     mkdir "/home/factorio"
 fi
 
-# Setup Conf
-
 cp -R $TMP/home/factorio/$CONF /home/factorio/$CONF
+
+if [[ ! -d "/home/factorio/maps" ]]; then
+    mkdir "/home/factorio/maps"
+fi
+
+
+chown factorio.factorio -R /home/factorio
 
 # Setup Service
 
 cp $TMP$SERVICES/factorio.service $SERVICES/factorio.service
+
+./scripts/clean.sh

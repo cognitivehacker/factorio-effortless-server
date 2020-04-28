@@ -2,6 +2,8 @@
 
 set -x
 
-if [[ -d ./tmp ]]; then
-    rm -fR ./tmp
+source ./scripts/source.sh
+
+if [[ -d "$TMP" ]]; then
+    rm -fR $TMP
 fi

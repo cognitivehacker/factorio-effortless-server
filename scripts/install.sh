@@ -2,6 +2,8 @@
 
 set -x 
 
+source ./scripts/source.sh
+
 if [[ ! -d ./tmp ]]; then
     echo "error: tmp not found"
     echo "try to run make && make install"

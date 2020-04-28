@@ -8,6 +8,11 @@ prepare: clean
 clean:
 	@./scripts/clean.sh
 
+
+.PHONY: install
+install:
+	@./scripts/install.sh
+
 .PHONY: run
 run:
 	@./tmp/usr/local/lib/factorio/bin/x64/factorio --start-server maps/world --server-settings configs/server-settings.json 
